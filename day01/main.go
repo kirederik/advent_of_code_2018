@@ -30,6 +30,8 @@ func SumSequence(filepath string) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
+	defer f.Close()
+
 	var sum int64
 	for {
 		var i int64
@@ -49,6 +51,8 @@ func FindLoop(filepath string) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
+	defer f.Close()
+
 	var sum int64
 
 	m := map[int64]int{0: 1}
