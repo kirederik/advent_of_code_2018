@@ -89,6 +89,24 @@ func ExampleFindLoop() {
 	// 2 <nil>
 }
 
+var result int64
+
+func BenchmarkSumSequence(b *testing.B) {
+	var r int64
+	for n := 0; n < b.N; n++ {
+		r, _ = SumSequence("./input")
+	}
+	result = r
+}
+
+func BenchmarkFindLoop(b *testing.B) {
+	var r int64
+	for n := 0; n < b.N; n++ {
+		r, _ = FindLoop("./input")
+	}
+	result = r
+}
+
 func createFileWithContent(s []string) (*os.File, error) {
 	tmpfile, err := ioutil.TempFile("", "example")
 	if err != nil {
