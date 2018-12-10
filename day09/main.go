@@ -43,7 +43,6 @@ func Roll(nPlayers, numMarbles int) {
 
 	circle.current = currentMarble
 	circle.head = currentMarble
-	circle.tail = currentMarble
 
 	for marbleToInsert := 1; marbleToInsert <= numMarbles; marbleToInsert++ {
 		if marbleToInsert%23 == 0 {
